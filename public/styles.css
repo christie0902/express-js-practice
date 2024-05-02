@@ -52,7 +52,10 @@
   }
 
   .content {
-      height: 70vh;
+
+      width: 80vw;
+      margin-inline: auto;
+      margin-block: auto;
   }
 
   h2 {
@@ -71,6 +74,8 @@
 
   /* Footer */
   footer {
+    height: 5vh;
+    margin-top: 20%;
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -115,3 +120,37 @@
   button:hover {
     background-color: #0056b3; /* Darker blue */
   }
+
+  .details {
+    margin-top: 20px;
+}
+
+.details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* .details .content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+} */
+
+.details .content p {
+    font-size: 16px;
+}
+
+.delete {
+    display: inline-block;
+    background-color: #c0392b;
+    color: #fff;
+    margin-top: 10px;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.delete:hover {
+    background-color: #e74c3c;
+    cursor: pointer;
+}
