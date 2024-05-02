@@ -2,6 +2,14 @@ const express = require('express');
 
 const app = express();
 const morgan = require('morgan')
+const mongoose = require('mongoose')
+
+
+// connect to mongoDB
+const dbURI ="mongodb+srv://christiepham:test1234@nodetuts.nkxtpsa.mongodb.net/node-tuts?retryWrites=true&w=majority&appName=nodetuts"
+mongoose.connect(dbURI)
+.then((result)=> app.listen(3000)) //only listen to request after the database is connected
+.catch((err)=>console.log(err))
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -9,7 +17,7 @@ app.set('view engine', 'ejs');
 // manually set up a different views file folder that is not views
 // app.set('views', 'myviews')
 
-app.listen(3000);
+
 
 //middleware static files - have it accessible from the front-end
 app.use(express.static('public'))
