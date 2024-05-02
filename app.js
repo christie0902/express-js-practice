@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const morgan = require('morgan')
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -10,6 +11,11 @@ app.set('view engine', 'ejs');
 
 app.listen(3000);
 
+//middleware static files - have it accessible from the front-end
+app.use(express.static('public'))
+
+//logging middleware = show time loaded and .path
+app.use(morgan('dev'))
 
 app.get('/', (req,res) => {
     const blogs = [
